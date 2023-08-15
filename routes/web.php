@@ -23,7 +23,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/', [UserController::class, 'dologin']);
 });
 // guest yang akan melakukan logout
-Route::group(['middleware' => ['auth', 'checkrole:1,2']], function () {
+Route::group(['middleware' => ['auth', 'checkrole:1,2,3,4,5,6,7,8,9,10']], function () {
     Route::post('/logout', [UserController::class, 'logout']);
     Route::get('/redirect', [UserController::class, 'cek']);
 });
@@ -34,11 +34,11 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 });
 
 // login untuk kepalapublikasi
-Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
+Route::group(['middleware' => ['auth', 'checkrole:9']], function () {
     Route::get('/kepalapublikasi', [KepalaPublikasiController::class, 'index']);
 });
 
-// login untuk staffdokumentasi
-Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
-    Route::get('/staffdokumentasi', [StaffHukumController::class, 'index']);
+// login untuk staffhukum
+Route::group(['middleware' => ['auth', 'checkrole:10']], function () {
+    Route::get('/staffhukum', [StaffHukumController::class, 'index']);
 });
