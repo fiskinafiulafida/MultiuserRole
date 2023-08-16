@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KepalaPublikasiController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\StaffHukumController;
@@ -25,13 +26,16 @@ Route::group(['middleware' => 'guest'], function () {
 // guest yang akan melakukan logout
 Route::group(['middleware' => ['auth', 'checkrole:1,2,3,4,5,6,7,8,9,10']], function () {
     Route::post('/logout', [UserController::class, 'logout']);
+    Route::get('/logout', [UserController::class, 'logout']);
     Route::get('/redirect', [UserController::class, 'cek']);
 });
-
+// Operator //
 // login untuk operator
 Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
     Route::get('/operator', [OperatorController::class, 'index']);
 });
+// berita
+Route::resource('/berita', BeritaController::class)->middleware('checkrole:1');
 
 // login untuk kepalapublikasi
 Route::group(['middleware' => ['auth', 'checkrole:9']], function () {
