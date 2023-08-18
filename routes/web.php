@@ -6,6 +6,7 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\StaffHukumController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginWithGoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +52,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
+Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);

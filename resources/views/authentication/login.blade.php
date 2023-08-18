@@ -56,6 +56,11 @@
                 </form>
                 <div class="social-login">
                     <span class="social-label">Or login with</span>
+                    <div class="items-center mt-2" style="margin-left: 60px">
+                        <a href="{{ url('authorized/google') }}">
+                            <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                        </a>
+                    </div>
                     <ul class="socials">
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
