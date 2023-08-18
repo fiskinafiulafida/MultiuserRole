@@ -46,3 +46,15 @@ Route::group(['middleware' => ['auth', 'checkrole:9']], function () {
 Route::group(['middleware' => ['auth', 'checkrole:10']], function () {
     Route::get('/staffhukum', [StaffHukumController::class, 'index']);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
