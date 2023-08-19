@@ -6,6 +6,7 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\StaffHukumController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginWithGoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,10 @@ Route::group(['middleware' => ['auth', 'checkrole:9']], function () {
 Route::group(['middleware' => ['auth', 'checkrole:10']], function () {
     Route::get('/staffhukum', [StaffHukumController::class, 'index']);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
+Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
