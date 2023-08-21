@@ -23,15 +23,6 @@
                 <form method="POST" action="/">
                     @csrf
                     <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Your Name" />
-                        @error('name')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Your Email" />
                         @error('email')
@@ -49,24 +40,18 @@
                         </div>
                         @enderror
                     </div>
-
+                    <center>
                     <div class="form-group form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
                     </div>
+                </center>
                 </form>
-                <div class="social-login">
-                    <span class="social-label">Or login with</span>
                     <div class="items-center mt-2" style="margin-left: 60px">
+                        <span class="social-label">Or login with</span>
                         <a href="{{ url('authorized/google') }}">
                             <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
                         </a>
                     </div>
-                    <ul class="socials">
-                        <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                        <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                        <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -11,12 +12,16 @@ class ProfileController extends Controller
     public function index()
     {
         $profile = User::latest()->get();
-        return view('profile.index', compact('profile'));
+        $berita = Berita::count();
+
+        return view('profile.index', compact('profile', 'berita'));
     }
 
     public function edit(User $profile)
     {
-        return view('profile.edit', compact('profile'));
+        $berita = Berita::count();
+
+        return view('profile.edit', compact('profile', 'berita'));
     }
 
     public function update(Request $request, User $profile)
