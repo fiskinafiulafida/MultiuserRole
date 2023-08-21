@@ -16,6 +16,8 @@ class BeritaController extends Controller
     public function index()
     {
         $berita = Berita::latest()->get();
+
+
         return view('berita.index', compact('berita'));
     }
 
@@ -26,7 +28,9 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('berita.create');
+        $berita = Berita::count();
+
+        return view('berita.create', compact('berita'));
     }
 
     /**
@@ -81,7 +85,9 @@ class BeritaController extends Controller
      */
     public function edit(Berita $beritum)
     {
-        return view('berita.edit', compact('beritum'));
+        $berita = Berita::count();
+
+        return view('berita.edit', compact('beritum','berita'));
     }
 
     /**

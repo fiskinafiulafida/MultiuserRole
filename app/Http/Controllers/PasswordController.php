@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdatePasswordRequest;
 use App\Models\User;
+use App\Models\Berita;
 use App\Rules\CurrentPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,9 @@ class PasswordController extends Controller
 
     public function edit(User $password)
     {
-        return view('password.index', compact('password'));
+        $berita = Berita::count();
+
+        return view('password.index', compact('password','berita'));
     }
 
     public function update(Request $request)

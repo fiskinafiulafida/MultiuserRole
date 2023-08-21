@@ -21,7 +21,6 @@ class UserController extends Controller
         // validasi
         $credentials = $request->validate([
             'email' => 'required|email',
-            'name' => 'required',
             'password' => 'required'
         ]);
 
