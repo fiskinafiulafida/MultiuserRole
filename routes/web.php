@@ -7,6 +7,7 @@ use App\Http\Controllers\StaffHukumController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginWithGoogleController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -60,3 +61,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // profile
 Route::resource('/profile', ProfileController::class)->middleware('auth');
+// password
+Route::resource('/password', PasswordController::class)->middleware('auth');
+Route::post('/change-password', [App\Http\Controllers\PasswordController::class, 'update'])->name('update-password')->middleware('auth');
