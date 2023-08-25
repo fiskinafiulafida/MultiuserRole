@@ -9,59 +9,60 @@
         <div class="signup-content">
             <div class="signup-form">
                 <h2 class="form-title">Sign up</h2>
-                <form method="POST" class="register-form" id="register-form">
+                <form action="/RegisterPemohon" method="POST" class="register-form" id="register-form">
+                    @csrf
                     <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="name" id="name" placeholder="Nama" />
+                        <label for="nama"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="nama" id="nama" placeholder="Nama" />
                     </div>
                     <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="name" id="name" placeholder="NIK" />
+                        <label for="nik"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="nik" id="nik" placeholder="NIK" />
                     </div>
                     <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="name" id="name" placeholder="No Telephone" />
+                        <label for="noHp"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="noHp" id="noHp" placeholder="No Telephone" />
                     </div>
                     <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-email material-icons-name"></i></label>
-                        <input type="text" name="name" id="name" placeholder="Alamat" />
+                        <label for="alamat"><i class="zmdi zmdi-email material-icons-name"></i></label>
+                        <input type="text" name="alamat" id="alamat" placeholder="Alamat" />
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-email"></i></label>
                         <input type="email" name="email" id="email" placeholder="Email" />
                     </div>
                     <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="name" id="name" placeholder="Usia" />
+                        <label for="usia"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="usia" id="usia" placeholder="Usia" />
                     </div>
                     <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="name" id="name" placeholder="Pekerjaan" />
+                        <label for="pekerjaan"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="pekerjaan" id="pekerjaan" placeholder="Pekerjaan" />
                     </div>
                     <div class="form-group">
                         <div><i class="zmdi zmdi-account material-icons-name"></i>
                             Jenis Kelamin
                         </div>
-                        <input type="radio" name="jenis_kelamin" value="Laki-laki">Laki-laki
-                        <input type="radio" name="jenis_kelamin" value="Perempuan">Perempuan
+                        <input type="radio" name="jenisKelamin" value="Laki-laki">Laki-laki
+                        <input type="radio" name="jenisKelamin" value="Perempuan">Perempuan
                     </div>
                     <div class="form-group">
                         <div><i class="zmdi zmdi-account material-icons-name"></i>
                             Pendidikan Terakhir
                         </div>
-                        <input type="radio" name="jenis_kelamin" value="Tidak Sekolah">Tidak Sekolah
-                        <input type="radio" name="jenis_kelamin" value="SD/MI /Sederajat">SD/MI /Sederajat
-                        <input type="radio" name="jenis_kelamin" value="SMP/MTs/Sederajat">SMP/MTs/Sederajat
-                        <input type="radio" name="jenis_kelamin" value="SMA/MA/SMK/Sederajat">SMA/MA/SMK/Sederajat
-                        <input type="radio" name="jenis_kelamin" value="D-III/Sederajat">D-III/Sederajat
-                        <input type="radio" name="jenis_kelamin" value="S1 / D-VI / Sederajat">S1 / D-VI / Sederajat
-                        <input type="radio" name="jenis_kelamin" value="S2">S2
-                        <input type="radio" name="jenis_kelamin" value="S3">S3
-                        <input type="radio" name="jenis_kelamin" value="Yang Lainnya ...">Yang Lainnya ...
+                        <input type="radio" name="pendidikanTerakhir" value="Tidak Sekolah">Tidak Sekolah
+                        <input type="radio" name="pendidikanTerakhir" value="SD/MI /Sederajat">SD/MI /Sederajat
+                        <input type="radio" name="pendidikanTerakhir" value="SMP/MTs/Sederajat">SMP/MTs/Sederajat
+                        <input type="radio" name="pendidikanTerakhir" value="SMA/MA/SMK/Sederajat">SMA/MA/SMK/Sederajat
+                        <input type="radio" name="pendidikanTerakhir" value="D-III/Sederajat">D-III/Sederajat
+                        <input type="radio" name="pendidikanTerakhir" value="S1 / D-VI / Sederajat">S1 / D-VI / Sederajat
+                        <input type="radio" name="pendidikanTerakhir" value="S2">S2
+                        <input type="radio" name="pendidikanTerakhir" value="S3">S3
+                        <input type="radio" name="pendidikanTerakhir" value="Yang Lainnya ...">Yang Lainnya ...
                     </div>
                     <div class="form-group">
-                        <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input type="password" name="pass" id="pass" placeholder="Password" />
+                        <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" name="password" id="password" placeholder="Password" />
                     </div>
                     <div class="form-group form-button">
                         <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />

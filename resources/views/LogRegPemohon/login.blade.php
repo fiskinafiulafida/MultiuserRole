@@ -20,7 +20,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
-                <form method="POST" action="/">
+                <form method="POST" action="/LoginPemohon">
                     @csrf
                     <div class="form-group">
                         <label for="nama"><i class="zmdi zmdi-account material-icons-name"></i></label>
