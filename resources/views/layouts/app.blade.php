@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>JDIH Kota Batu</title>
+    <link rel="icon" href="{{asset('img/pemkot.png')}}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -93,7 +94,7 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Berita</a>
+                      <a class="nav-link" href="/home/berita">Berita</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Forum</a>

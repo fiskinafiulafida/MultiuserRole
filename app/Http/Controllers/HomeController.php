@@ -28,4 +28,10 @@ class HomeController extends Controller
 
         return view('home', compact('berita'));
     }
+    public function berita()
+    {
+        $berita = Berita::latest()->get();
+
+        return view('berita', compact('berita'));
+    }
 }
