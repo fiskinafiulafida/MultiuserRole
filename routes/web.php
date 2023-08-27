@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DashboardPemohonController;
+use App\Http\Controllers\JdihController;
 use App\Http\Controllers\KepalaPublikasiController;
 use App\Http\Controllers\LoginPemohonController;
 use App\Http\Controllers\OperatorController;
@@ -72,8 +74,13 @@ Route::post('/change-password', [App\Http\Controllers\PasswordController::class,
 
 // Login dan Register Pemohon 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/LoginPemohon', [LoginPemohonController::class, 'login'])->name('login');
-    Route::post('/LoginPemohon', [LoginPemohonController::class, 'dologin']);
+    Route::get('/LoginPemohon', [LoginPemohonController::class, 'index']);
+    Route::post('/LoginPemohon', [LoginPemohonController::class, 'prosesLogin']);
 });
 
 Route::resource('/RegisterPemohon', RegisterPemohonController::class)->middleware('guest');
+
+// Halaman utama JDIH
+Route::resource('/HomeHukum', JdihController::class);
+
+Route::resource('/DashboardPemohon', DashboardPemohonController::class)->middleware('auth');

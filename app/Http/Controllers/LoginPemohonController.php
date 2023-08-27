@@ -5,33 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\LoginPemohon;
+use Illuminate\Support\Facades\Validator;
 
 class LoginPemohonController extends Controller
 {
-    public function login()
+    public function index()
     {
         return view('LogRegPemohon.login');
     }
 
-    public function dologin(Request $request)
+    public function prosesLogin(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+        $credentials = $request->validate([
+            'email' => ['required'],
+            'password' => ['required']
         ]);
-        if (Auth::attempt([
-            'nama' => $request->nama,
-            'email' => $request->email,
-            'password' => $request->password
-        ])) {
+
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/DashboardPemohon');
         }
 
-        return back()->withErrors([
-            'password' => 'Wrong username or password',
-        ]);
+        return back()->with('loginError', 'Login failed');
     }
 
     public function logout(Request $request)
