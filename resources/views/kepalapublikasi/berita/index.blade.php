@@ -1,6 +1,6 @@
-@extends('operator.index')
+@extends('kepalapublikasi.index')
 
-@section('title', 'Berita')
+@section('title', 'Berita Kepala Publikasi')
 
 @section('container')
 
@@ -15,10 +15,6 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <div>
-                    <a href="{{ route('berita.create') }}" class="btn btn-primary"> <i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</button></a>
-                </div>
-                <br>
                 <thead>
                     <tr>
                         <th>No</th>
@@ -56,12 +52,7 @@
                         <td>{{ $berita->status }}</td>
                         <td>{{ $berita->keterangan }}</td>
                         <td class="text-center">
-                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('berita.destroy', $berita->id) }}" method="POST">
-                                <a href="{{ route('berita.edit', $berita->id) }}" class="btn btn-sm btn-primary">EDIT</a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
-                            </form>
+                            <a href="{{ route('kepalapublikasiberita.edit', $berita->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                         </td>
                     </tr>
                     @empty

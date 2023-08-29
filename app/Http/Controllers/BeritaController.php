@@ -44,6 +44,8 @@ class BeritaController extends Controller
         $this->validate($request, [
             'judul_berita'      => 'required',
             'isi_berita'        => 'required',
+            'status'            => 'required',
+            'keterangan'        => 'required',
             'gambar_berita'     => 'required|image|mimes:png,jpg,jpeg',
         ]);
 
@@ -54,6 +56,8 @@ class BeritaController extends Controller
         $berita = Berita::create([
             'judul_berita'      => $request->judul_berita,
             'isi_berita'        => $request->isi_berita,
+            'status'            => $request->status,
+            'keterangan'        => $request->keterangan,
             'gambar_berita'     => $gambar_berita->hashName(),
         ]);
 
@@ -72,10 +76,6 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -87,7 +87,7 @@ class BeritaController extends Controller
     {
         $berita = Berita::count();
 
-        return view('berita.edit', compact('beritum','berita'));
+        return view('berita.edit', compact('beritum', 'berita'));
     }
 
     /**

@@ -5,6 +5,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardPemohonController;
 use App\Http\Controllers\JdihController;
 use App\Http\Controllers\KepalaPublikasiController;
+use App\Http\Controllers\KepPubkikasiBeritaController;
 use App\Http\Controllers\LoginPemohonController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\StaffHukumController;
@@ -49,6 +50,7 @@ Route::resource('/berita', BeritaController::class)->middleware('checkrole:1');
 Route::group(['middleware' => ['auth', 'checkrole:9']], function () {
     Route::get('/kepalapublikasi', [KepalaPublikasiController::class, 'index']);
 });
+Route::resource('/kepalapublikasiberita', KepPubkikasiBeritaController::class)->middleware('checkrole:9');
 
 // login untuk staffhukum
 Route::group(['middleware' => ['auth', 'checkrole:10']], function () {

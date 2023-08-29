@@ -37,6 +37,17 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label class="font-weight-bold">Keterangan</label>
+                <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" value="{{ old('keterangan', $beritum->keterangan) }}" placeholder="Masukkan Keterangan">
+
+                <!-- error message untuk title -->
+                @error('keterangan')
+                <div class="alert alert-danger mt-2">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label class="font-weight-bold">Gambar Berita</label>
                 <br>
                 <img src="{{ Storage::url('public/image/'.$beritum->gambar_berita) }}" class="rounded" style="width: 100px">

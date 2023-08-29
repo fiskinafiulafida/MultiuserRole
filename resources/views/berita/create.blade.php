@@ -35,6 +35,23 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label class="font-weight-bold">Keterangan</label>
+                <textarea type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan Keterangan">
+                </textarea>
+                <!-- error message untuk Keterangan -->
+                @error('keterangan')
+                <div class="alert alert-danger mt-2">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Status</label>
+                <div class="col-sm-9">
+                    <input type="radio" name="status" value="Pengajuan"> Pengajuan
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="font-weight-bold">Gambar Berita </label>
                 <input type="file" class="form-control @error('gambar_berita') is-invalid @enderror" name="gambar_berita">
                 <!-- error message untuk gambar_berita -->
