@@ -62,11 +62,12 @@ Route::resource('/artikel', ArtikelController::class)->middleware('checkrole:10'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/berita', [App\Http\Controllers\HomeController::class, 'berita'])->name('berita');
+
 
 Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
 Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // profile
 Route::resource('/profile', ProfileController::class)->middleware('auth');
