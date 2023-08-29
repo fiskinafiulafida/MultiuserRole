@@ -8,7 +8,7 @@
     <div class="container">
         <div class="signin-content">
             <div class="signin-image">
-                <figure><img src="{{ asset ('LogReg/images/Logo.png')}}" alt="sing up image"></figure>
+                <figure><img src="{{ asset ('LogReg/images/jdih.png')}}" alt="sing up image"></figure>
                 <a href="/register" class="signup-image-link">Create an account</a>
             </div>
 
@@ -41,17 +41,17 @@
                         @enderror
                     </div>
                     <center>
-                    <div class="form-group form-button">
-                        <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
-                    </div>
-                </center>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                        </div>
+                    </center>
                 </form>
-                    <div class="items-center mt-2" style="margin-left: 60px">
-                        <span class="social-label">Or login with</span>
-                        <a href="{{ url('authorized/google') }}">
-                            <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
-                        </a>
-                    </div>
+                <div class="items-center mt-2" style="margin-left: 60px">
+                    <span class="social-label">Or login with</span>
+                    <a href="{{ url('authorized/google') }}">
+                        <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
